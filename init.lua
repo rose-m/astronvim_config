@@ -192,8 +192,18 @@ local config = {
                         ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
                         ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
                         ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+                        ['<leader>bC'] = {
+                                function() 
+                                        local view_state = vim.fn.winsaveview()
+                                        vim.cmd("%bd|e#|bd#")
+                                        vim.cmd("Neotree toggle")
+                                        vim.cmd("wincmd l")
+                                        vim.fn.winrestview(view_state)
+                                 end
+                        },
                         ['<c-cr>'] = { function() vim.lsp.buf.code_action() end },
                         ['<c-ä>'] = { organize_imports },
+
                         -- quick save
                         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
                 },
