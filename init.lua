@@ -202,6 +202,7 @@ local config = {
                         -- ["<esc>"] = false,
                 },
                 i = {
+                        ['<c-k>'] = { "<cmd>lua vim.lsp.buf.signature_help()<cr>" }
                         -- ["<c-e>"] = { "<esc>:b#<cr>a", desc = "Go to previous tab" },
                 },
         },
