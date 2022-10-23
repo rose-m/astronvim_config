@@ -199,10 +199,11 @@ local config = {
                                         vim.cmd("Neotree toggle")
                                         vim.cmd("wincmd l")
                                         vim.fn.winrestview(view_state)
-                                 end
+                                 end,
+                                 desc = "Close all other buffers"
                         },
-                        ['<c-cr>'] = { function() vim.lsp.buf.code_action() end },
-                        ['<c-ä>'] = { organize_imports },
+                        ['<c-cr>'] = { function() vim.lsp.buf.code_action() end, desc = "Open Actions" },
+                        ['<c-ä>'] = { organize_imports, desc = "Organize Imports"},
 
                         -- quick save
                         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
