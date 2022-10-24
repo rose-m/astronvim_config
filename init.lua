@@ -99,6 +99,7 @@ local config = {
                         background = "dark",
                         tabstop = 4,
                         shiftwidth = 0,
+                        autoread = true,
                 },
                 g = {
                         mapleader = " ", -- sets vim.g.mapleader
