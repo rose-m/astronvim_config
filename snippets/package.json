@@ -10,9 +10,9 @@
             },
             {
                 "language": [
-                    "proto3"
+                    "proto"
                 ],
-                "path": "./proto3.json"
+                "path": "./proto.json"
             },
             {
                 "language": [
