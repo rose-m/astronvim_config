@@ -211,6 +211,7 @@ local config = {
                 end,
                 desc = "Close all other buffers"
             },
+            ["<leader>lo"] = { "<cmd>SymbolsOutline<cr>", desc = "Open symbols outline" },
             ['<c-cr>'] = { function() vim.lsp.buf.code_action() end, desc = "Open Actions" },
             ['<c-ä>'] = { organize_imports, desc = "Organize Imports" },
 
@@ -295,6 +296,7 @@ local config = {
                 end,
             },
             { 'fatih/vim-go' },
+            { 'simrat39/symbols-outline.nvim' }
         },
         ["neo-tree"] = {
             window = {
@@ -358,18 +360,13 @@ local config = {
     -- augroups/autocommands and custom filetypes also this just pure lua so
     -- anything that doesn't fit in the normal config locations above can go here
     polish = function()
-        -- Set up custom filetypes
-        -- vim.filetype.add {
-        --   extension = {
-        --     foo = "fooscript",
-        --   },
-        --   filename = {
-        --     ["Foofile"] = "fooscript",
-        --   },
-        --   pattern = {
-        --     ["~/%.config/foo/.*"] = "fooscript",
-        --   },
-        -- }
+        -- somehow need to call this manually here
+        require("symbols-outline").setup({
+            width = 40,
+            auto_close = 1,
+            autofold_depth = 1,
+        })
+
         vim.api.nvim_create_autocmd("BufWritePre", {
             pattern = "*",
             callback = function()
