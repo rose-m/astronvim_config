@@ -1,0 +1,25 @@
+{
+    "name": "rosem-custom-snippets",
+    "contributes": {
+        "snippets": [
+            {
+                "language": [
+                    "go"
+                ],
+                "path": "./go.json"
+            },
+            {
+                "language": [
+                    "proto3"
+                ],
+                "path": "./proto3.json"
+            },
+            {
+                "language": [
+                    "typescriptreact"
+                ],
+                "path": "./typescriptreact.json"
+            }
+        ]
+    }
+}

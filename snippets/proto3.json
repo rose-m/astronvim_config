@@ -1,0 +1,62 @@
+{
+	"gRPC rpc method definition": {
+		"prefix": "grpcm",
+		"body": [
+			"rpc ${1}(${1}Request)",
+			"    returns (${1}Response) {",
+			"  option (google.api.http) = {",
+			"    ${2}: '/v1/{parent=customers/*/profiles/*}/${3}'",
+			"  };",
+			"}"
+		]
+	},
+	"gRPC Field Behavior - Required": {
+		"prefix": "gfbr",
+		"body": [
+			"(google.api.field_behavior) = REQUIRED"
+		],
+		"description": "Add gRPC Google API field_behavior REQUIRED"
+	},
+	"gRPC Field Behavior - Immutable": {
+		"prefix": "gfbi",
+		"body": [
+			"(google.api.field_behavior) = IMMUTABLE"
+		],
+		"description": "Add gRPC Google API field_behavior IMMUTABLE"
+	},
+	"gRPC Field Behavior - Output only": {
+		"prefix": "gfbo",
+		"body": [
+			"(google.api.field_behavior) = OUTPUT_ONLY"
+		],
+		"description": "Add gRPC Google API field_behavior OUTPUT_ONLY"
+	},
+	"gRPC Field Behavior - Optional only": {
+		"prefix": "gfbopt",
+		"body": [
+			"(google.api.field_behavior) = OPTIONAL"
+		],
+		"description": "Add gRPC Google API field_behavior OPTIONAL"
+	},
+	"gRPC Field Behavior - validate.message.required": {
+		"prefix": "gfbvmr",
+		"body": [
+			"(validate.rules).message.required = true"
+		],
+		"description": "Add gRPC Validation rule message.required = true"
+	},
+	"gRPC Field Behavior - validate.string.min_len": {
+		"prefix": "gfbvsml",
+		"body": [
+			"(validate.rules).string.min_len = 1"
+		],
+		"description": "Add gRPC Validation rule string.min_len = 1"
+	},
+	"gRPC Resource Reference": {
+		"prefix": "grr",
+		"body": [
+			"(google.api.resource_reference).type = \"cresta.v1.\""
+		],
+		"description": "Add gRPC Google API resource reference"
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"Import protobuf": {
+		"prefix": "gopb",
+		"body": [
+			"${1}pb \"github.com/cresta/cresta-proto/gen/go/cresta/v1/${1}\""
+		],
+		"description": "Generate import statement for generated protobuf"
+	},
+	"Import sql-schema protobuf": {
+		"prefix": "godbpb",
+		"body": [
+			"db${1}pb \"github.com/cresta/sql-schema/gen/go/protos/${1}\""
+		],
+		"description": "Generate import statement for generated sql-schema protobuf"
+	}
+}

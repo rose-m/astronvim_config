@@ -1,0 +1,35 @@
+{
+	"useState": {
+		"prefix": "rus",
+		"body": [
+			"const [$1, set${1/(.*)/${1:/pascalcase}/}] = useState($0);"
+		],
+		"description": "React useState"
+	},
+	"Memo Component": {
+		"prefix": "rmc",
+		"body": [
+			"import React, { memo, ReactElement } from 'react';",
+			"",
+			"export const $1 = memo(function $1(): ReactElement {",
+			"  return <div>New Component</div>;",
+			"});"
+		],
+		"description": "React memo-ed functional component"
+	},
+	"Memo Component with Props": {
+		"prefix": "rmcp",
+		"body": [
+			"import React, { memo, ReactElement } from 'react';",
+			"",
+			"export interface ${1}Props {",
+			"  className?: string;",
+			"}",
+			"",
+			"export const $1 = memo(function $1({ className }: ${1}Props): ReactElement {",
+			"  return <div>New Component</div>;",
+			"});"
+		],
+		"description": "React memo-ed functional component with props"
+	}
+}
