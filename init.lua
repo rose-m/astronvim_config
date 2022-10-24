@@ -13,7 +13,7 @@ local function organize_imports()
 end
 
 local function save_buffer()
-    if vim.bo.filetype ~= "" and vim.bo.buftype ~= "nofile" and vim.bo.modifiable then
+    if vim.bo.filetype ~= "" and vim.bo.buftype == nil and vim.bo.modifiable then
         local view_state = vim.fn.winsaveview()
         vim.cmd("w")
         vim.fn.winrestview(view_state)
