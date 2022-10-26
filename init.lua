@@ -313,7 +313,14 @@ local config = {
                 ["neo-tree"] = {
                         window = {
                                 width = 70
-                        }
+                        },
+                        filesystem = {
+                                filtered_items = {
+                                        always_show = {
+                                                ".env",
+                                        },
+                                },
+                        },
                 },
                 telescope = {
                         defaults = {
