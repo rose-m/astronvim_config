@@ -46,26 +46,26 @@ local config = {
         },
 
         -- Set colorscheme to use
-        colorscheme = "tundra",
+        colorscheme = "gruvbox",
 
         -- Add highlight groups in any theme
         highlights = {
                 -- duskfox = { -- a table of overrides
                 --   Normal = { bg = "#000000" },
                 -- },
-                default_theme = function(highlights) -- or a function that returns one
-                        local C = require "default_theme.colors"
-
-                        highlights.Normal = { fg = C.fg, bg = C.bg }
-                        return highlights
-                end,
+                -- default_theme = function(highlights) -- or a function that returns one
+                --         local C = require "default_theme.colors"
+                --
+                --         highlights.Normal = { fg = C.fg, bg = C.bg }
+                --         return highlights
+                -- end,
         },
 
         default_theme = {
                 diagnostics_style = { italic = true },
                 -- Modify the color table
                 colors = {
-                        fg = "#abb2bf",
+                        -- fg = "#abb2bf",
                 },
                 plugins = { -- enable or disable extra plugin highlighting
                         aerial = true,
@@ -226,6 +226,10 @@ local config = {
 
                         ['<leader>ff'] = { "<cmd>Telescope find_files hidden=true<cr>" },
 
+                        -- Useful for merging with nvimdiff3
+                        ['<leader>g1'] = { "<cmd>diffget 1<cr>", desc = "Get local changes" },
+                        ['<leader>g2'] = { "<cmd>diffget 2<cr>", desc = "Get base changes" },
+                        ['<leader>g3'] = { "<cmd>diffget 3<cr>", desc = "Get remote changes" },
                         -- quick save
                         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
                 },
@@ -306,9 +310,11 @@ local config = {
                                         })
                                 end,
                         },
+                        { 'morhetz/gruvbox' },
                         { 'fatih/vim-go' },
                         { 'simrat39/symbols-outline.nvim' },
                         { 'alvan/vim-closetag' },
+                        { 'kylechui/nvim-surround' },
                 },
                 ["neo-tree"] = {
                         window = {
