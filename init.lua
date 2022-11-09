@@ -232,6 +232,13 @@ local config = {
                         ['<leader>g3'] = { "<cmd>diffget 3<cr>", desc = "Get remote changes" },
                         -- quick save
                         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
+                        ['<c-s-tab>'] = {
+                                function()
+                                        require('telescope.builtin').buffers({ sort_lastused = true,
+                                                ignore_current_buffer = true })
+                                end
+                        },
                 },
                 t = {
                         -- setting a mapping to false will disable it
